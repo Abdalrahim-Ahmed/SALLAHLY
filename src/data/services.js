@@ -15,7 +15,7 @@ export const categories = [
   { id: 'ac', label: 'تكييف' },
   { id: 'electric', label: 'كهرباء' },
   { id: 'plumbing', label: 'سباكة' },
-  { id: 'maintenance', label: 'صيانة' },
+  { id: 'maintenance', label: 'أجهزة كهربائية' },
 ];
 
 // Service image & icon mappings for the 4 core services
@@ -67,17 +67,17 @@ export const services = [
   },
   {
     id: 'general-maintenance',
-    title: 'صيانة عامة',
+    title: 'صيانة أجهزة كهربائية',
     category: 'maintenance',
     icon: '/images/services/icons/maintenance-icon.png',
     image: '/images/services/photos/appliances.jpg',
     price: 100,
     duration: 'من ساعة إلى ساعتين',
-    short: 'أعمال الصيانة العامة والإصلاحات المنزلية',
+    short: 'تشخيص وإصلاح أعطال الأجهزة الكهربائية المنزلية',
     description:
-      'تشخيص الأعطال وإصلاح المشاكل المنزلية العامة بما في ذلك الأجهزة المنزلية والنجارة والدهانات.',
-    features: ['تشخيص العطل في الموقع', 'إصلاح معظم الأعطال في الزيارة', 'قطع غيار عند الحاجة', 'ضمان 30 يوم'],
-    problems: ['أعطال أجهزة منزلية', 'مشاكل في الأبواب والنوافذ', 'أعمال دهانات وترميم', 'صيانة دورية'],
+      'فحص وإصلاح أعطال الأجهزة الكهربائية المنزلية، مع توفير قطع الغيار عند الحاجة وضمان على الخدمة.',
+    features: ['تشخيص العطل في الموقع', 'إصلاح الأجهزة الكهربائية المنزلية', 'قطع غيار عند الحاجة', 'ضمان 30 يوم'],
+    problems: ['الغسالة لا تعمل', 'الثلاجة لا تبرد', 'أعطال الأجهزة الكهربائية المنزلية', 'أصوات أو تسريب غير معتاد من الجهاز'],
     related: ['electrical', 'plumbing'],
   },
 ];

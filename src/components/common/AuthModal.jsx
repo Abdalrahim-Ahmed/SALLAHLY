@@ -48,7 +48,7 @@ const specialtyOptions = categories
         ? 'الكهرباء'
         : id === 'plumbing'
           ? 'السباكة'
-          : 'الصيانة العامة',
+          : 'صيانة الأجهزة الكهربائية',
   }));
 
 const uploadFields = [

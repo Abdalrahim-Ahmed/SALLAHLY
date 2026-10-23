@@ -49,7 +49,7 @@ export default function HeroVideoPlayer() {
       <video
         ref={videoRef}
         className="hero-video-frame"
-        src="/videos/awal-result.mp4"
+        src="/videos/motion-1.mp4"
         onTimeUpdate={handleTimeUpdate}
         onEnded={() => setIsPlaying(false)}
         playsInline

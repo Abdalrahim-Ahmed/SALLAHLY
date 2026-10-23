@@ -28,7 +28,7 @@ export default function VideoSection() {
             }}
           >
             <video
-              src="/videos/motion-1.mp4"
+              src="/videos/awal-result.mp4"
               title="فيديو تعريفي عن صلحلي"
               controls
               playsInline

@@ -49,8 +49,7 @@ export default function HeroVideoPlayer() {
       <video
         ref={videoRef}
         className="hero-video-frame"
-        poster="/images/banners/banner-ar.jpg"
-        src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+        src="/videos/awal-result.mp4"
         onTimeUpdate={handleTimeUpdate}
         onEnded={() => setIsPlaying(false)}
         playsInline

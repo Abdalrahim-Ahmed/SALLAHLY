@@ -5,6 +5,7 @@ export default function HeroVideoPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [hasVideoError, setHasVideoError] = useState(false);
   const videoRef = useRef(null);
 
   const togglePlay = () => {
@@ -45,14 +46,16 @@ export default function HeroVideoPlayer() {
 
   return (
     <div className="hero-video-card" aria-label="فيديو تعريفي عن صلحلي">
-      {/* Video Element with banner poster */}
       <video
         ref={videoRef}
         className="hero-video-frame"
-        src="/videos/motion-1.mp4"
+        src="https://res.cloudinary.com/wkfrf9ph/video/upload/f_mp4,q_auto/v1792786116/%D8%A7%D9%84%D9%85%D9%88%D8%B4%D9%86_1.mp4"
+        preload="none"
         onTimeUpdate={handleTimeUpdate}
         onEnded={() => setIsPlaying(false)}
+        onError={() => setHasVideoError(true)}
         playsInline
+        style={hasVideoError ? { visibility: 'hidden' } : undefined}
       />
 
       {/* Control Overlay */}
@@ -74,19 +77,23 @@ export default function HeroVideoPlayer() {
           </span>
         </div>
 
-        {/* Center Play / Pause trigger */}
+        {hasVideoError && (
+          <p role="status" aria-live="polite" style={{ margin: 'auto', textAlign: 'center' }}>
+            تعذر تحميل الفيديو. يرجى المحاولة لاحقًا.
+          </p>
+        )}
+
         <button
           type="button"
           onClick={togglePlay}
           className="hero-video-play-btn"
           aria-label={isPlaying ? 'إيقاف مؤقت' : 'تشغيل الفيديو'}
+          hidden={hasVideoError}
         >
           {isPlaying ? <Pause size={28} /> : <Play size={28} style={{ transform: 'translateX(-2px)' }} />}
         </button>
 
-        {/* Bottom smooth controls */}
-        <div>
-          {/* Progress bar */}
+        <div hidden={hasVideoError}>
           <div
             onClick={handleSeek}
             style={{
